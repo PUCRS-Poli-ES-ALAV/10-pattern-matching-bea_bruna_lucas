@@ -1,28 +1,3 @@
-def func(s1,s2,i):
-  if len(s2) == 0:
-    return True
-  try:
-    if s1[i] == s2[0]:
-      return func(s1,s2[1:],i+1)
-  except:
-    return False
-
-s1 = "ABCDCBDCBDACBDABDCBADF"
-s2 = "ADF"
-
-for i in range(len(s1)):
-  if func(s1,s2,i):
-    print(i)
-    break
-
-s1 = "AAAAAAAAAAAAB"
-s2 = "AAAB"
-
-for i in range(len(s1)):
-  if func(s1,s2,i):
-    print(i)
-    break
-
 def funcWCounter(s1, s2, i, count):
     count[0] += 1
     if len(s2) == 0:
@@ -32,7 +7,6 @@ def funcWCounter(s1, s2, i, count):
             return funcWCounter(s1, s2[1:], i+1, count)
     except IndexError:
         return False
-    return funcWCounter(s1, s2, i+1, count)
 
 s1 = "ABCDCBDCBDACBDABDCBADF"
 s2 = "ADF"
